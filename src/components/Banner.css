@@ -113,3 +113,53 @@
   right: 20px;
 }
 
+.besouro-pixel {
+  position: absolute;
+  top: -75px;
+  left: 0;
+
+  width: 120px;
+  height: 120px;
+
+  background-image: url('../assets/besouro-pixel.png');
+  background-repeat: no-repeat;
+
+  image-rendering: pixelated;
+
+  z-index: 20;
+  pointer-events: none;
+
+ animation:
+  andarBesouro 1.6s steps(12) infinite,
+  moverBesouro 14s ease-in-out infinite;
+}
+@keyframes andarBesouro {
+  from {
+    background-position: 0px 0;
+  }
+
+  to {
+    background-position: -1800px 0;
+  }
+}
+
+@keyframes moverBesouro {
+  0% {
+    left: 0;
+    transform: scaleX(1);
+  }
+
+  50% {
+    left: calc(100% - 120px);
+    transform: scaleX(1);
+  }
+
+  50.1% {
+    transform: scaleX(-1);
+  }
+
+  100% {
+    left: 0;
+    transform: scaleX(-1);
+  }
+}
